@@ -2,10 +2,10 @@
 #
 # Function: Get-Installer
 #
-# Contributors: @kaysouthall
-# Created: 2024-10-07
-# Last Modified: 2024-10-07
-# Version 2.0
+# Contributors: @kaysouthall, @theDXT
+# Created: 2024-Oct-07
+# Last Modified: 2025-Dec-19
+# Version 2.0.1
 #
 # Description:
 #   Downloads the installer from the specified URL and saves it to the specified output path.
@@ -30,10 +30,11 @@ function Get-Installer {
     }
 
     try {
-        Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutputPath -ErrorAction Stop
+        Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutputPath -ErrorAction Stop -UseBasicParsing
         Write-Verbose "Downloaded installer to: $OutputPath"
     } catch {
         Write-Verbose "Error downloading installer: $_"
         Exit 1
     }
+
 }
