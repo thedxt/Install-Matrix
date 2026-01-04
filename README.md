@@ -1,8 +1,12 @@
-![Image](https://github.com/user-attachments/assets/ddaee1d2-b8ff-46ee-83ba-959c95ec91fe)
+![Install-Matrix](https://github.com/user-attachments/assets/34bf0870-b44b-4fa4-bccd-7a3f1e674e9a)
+
 # Install Matrix
+
 The Install Matrix is a collection of PowerShell install functions as scripts.
 The goal of the Install Matrix is to modularize each part of a PowerShell install script into functions that can be reused in new PowerShell scripts to install applications.
 The Install Matrix helps reduce duplicate work, making it quick and easy to package applications and reducing overhead when updating them.
+
+[Here is a detailed guide on how to create an install script with the Install Matrix](https://thedxt.ca/2026/01/install-matrix/)
 
 # The Scripts
 ## Backup-App-Data.ps1
