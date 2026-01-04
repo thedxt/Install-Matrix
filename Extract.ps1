@@ -25,7 +25,7 @@ function Extract{
         [string]$OutputPath
     )
     try{
-Write-verbose "Extracting zip"
+Write-host "Extracting zip"
 Expand-Archive -force $ZipFile -DestinationPath $OutputPath
 Write-host "zip is extracted to: $OutputPath"
 } catch{
@@ -34,3 +34,4 @@ Write-host "Error extracting zip : $_"
 }
 
 }
+
