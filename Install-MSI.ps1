@@ -3,9 +3,11 @@
 # Function: Install-MSI
 #
 # Contributors: @kaysouthall, @theDXT
-# Created: 2024-10-07
-# Last Modified: 2025-04-04
-# Version 3.0.1
+# Created: 2024-Oct-07
+# Last Modified: 2026-Jan-04
+# Version 3.0.2
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Executes the downloaded MSI installer with specified arguments to perform a silent installation.
@@ -20,12 +22,12 @@ function Install-MSI {
     )
     
     try {
-    Write-Verbose "Installation is starting"
+    Write-Host "Installation is starting"
        Start-Process msiexec.exe -ArgumentList "/i" , $InstallerPath, $InstallArgs -wait -WindowStyle Hidden
 
-        Write-Verbose "Installation completed successfully"
+        Write-Host "Installation completed successfully"
     } catch {
-        Write-Verbose "Error during installation: $_"
+        Write-Host "Error during installation: $_"
         Exit 1
     }
 }
