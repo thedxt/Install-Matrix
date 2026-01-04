@@ -21,9 +21,6 @@ if ($RegKeys)
 write-host "$ProgramName is Found"
 $CurentVersion = $RegKeys.DisplayVersion
 write-host "$ProgramName version is $CurentVersion"
-#prog-version
-
-
 }else{
 write-host "$ProgramName is NOT Found"
 }
