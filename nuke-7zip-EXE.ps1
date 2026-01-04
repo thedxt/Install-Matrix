@@ -3,9 +3,12 @@
 # Function: nuke-7zip-EXE
 #
 # Contributors: @theDXT
-# Created: 2024-03-22
-# Last Modified: 2024-03-22
-# Version 2.0.0
+# Created: 2024-Mar-22
+# Last Modified: 2026-Jan-04
+# Version 2.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
+#
 # Description:
 #   perform a silent uninstall of 7Zip EXE.
 
@@ -34,5 +37,6 @@ ForEach ($7Zip_exe_version in $7ZipEXEFinder) {
 }
 write-host "7Zip EXE Client Nuke is completed"
 }
+
 
 }
