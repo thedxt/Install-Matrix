@@ -3,9 +3,11 @@
 # Function: Put-Base64
 #
 # Contributors: @theDXT
-# Created: 2024-02-13
-# Last Modified: 2025-01-07
-# Version 2.0.0
+# Created: 2024-Feb-13
+# Last Modified: 2026-Jan-04
+# Version 2.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Places a Base64 item into a location.
@@ -24,13 +26,14 @@ param(
 )
 
     try {
-        Write-Verbose "Placing Base64 item in: $Dest"
+        Write-Host "Placing Base64 item in: $Dest"
         $out = [Convert]::FromBase64String($Base64)
         [IO.File]::WriteAllBytes($Dest, $out)
-        Write-Verbose "Base64 item placed"
+        Write-Host "Base64 item placed"
     } catch {
-        Write-Verbose "Error placing the Bas64 item: $_"
+        Write-Host "Error placing the Bas64 item: $_"
         Exit 1
     }
+
 
 }
