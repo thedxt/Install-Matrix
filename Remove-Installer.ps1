@@ -3,9 +3,11 @@
 # Function: Remove-Installer
 #
 # Contributors: @kaysouthall
-# Created: 2024-10-07
-# Last Modified: 2024-10-07
-# Version 2.0
+# Created: 2024-Oct-07
+# Last Modified: 2026-Jan-04
+# Version 2.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Removes the downloaded installer file after installation.
@@ -21,9 +23,10 @@ function Remove-Installer {
 
     try {
         Remove-Item -Path $InstallerPath -ErrorAction Stop
-        Write-Verbose "Cleaned up installer file: $InstallerPath"
+        Write-Host "Cleaned up installer file: $InstallerPath"
     } catch {
-        Write-Verbose "Error cleaning up installer file: $_"
+        Write-Host "Error cleaning up installer file: $_"
         Exit 1
     }
+
 }
