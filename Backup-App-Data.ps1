@@ -3,9 +3,11 @@
 # Function: Backup-App-Data
 #
 # Contributors: @theDXT
-# Created: 2024-11-05
-# Last Modified: 2024-11-05
-# Version 1.0.0
+# Created: 2024-Nov-05
+# Last Modified: 2026-Jan-04
+# Version 1.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   looks for the defined app data folder for each user account in C:\users and if found copies it to a new folder in appdata with the current data and time
@@ -38,19 +40,20 @@ if (Test-Path "$($user.FullName)$($location)")
 # if found back it up
 {
 
-Write-Verbose "Found $($user.FullName)$($location)"
-Write-Verbose "Starting Backup"
+Write-Host "Found $($user.FullName)$($location)"
+Write-Host "Starting Backup"
 Copy-Item -path "$($user.FullName)$($location)" -destination "$($user.FullName)$($location)_$time" -Recurse -Force
-Write-Verbose "Backup Completed for $($user.FullName)$($location) to $($user.FullName)$($location)_$time"
+Write-Host "Backup Completed for $($user.FullName)$($location) to $($user.FullName)$($location)_$time"
 }
 
 else
 # if not found move along
 {
-Write-Verbose "Did not Find $($user.FullName)$($location)"
-Write-Verbose "skipping $user"
+Write-Host "Did not Find $($user.FullName)$($location)"
+Write-Host "skipping $user"
 }
 
 }
+
 
 }
