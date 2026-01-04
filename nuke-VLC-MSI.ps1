@@ -3,9 +3,12 @@
 # Function: nuke-VLC-MSI
 #
 # Contributors: @theDXT
-# Created: 2024-03-18
-# Last Modified: 2024-07-16
-# Version 2.0.0
+# Created: 2024-Mar-18
+# Last Modified: 2026-Jan-04
+# Version 2.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
+#
 # Description:
 #   perform a silent uninstall of VLC MSI.
 
@@ -33,5 +36,6 @@ ForEach ($VLC_version in $VLC_MSIFinder) {
 }
 write-host "VLC MSI Client Nuke is completed"
 }
+
 
 }

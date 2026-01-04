@@ -4,8 +4,10 @@
 #
 # Contributors: @theDXT
 # Created: 2024-12-19
-# Last Modified: 2024-12-19
-# Version 1.0.0
+# Last Modified: 2026-Jan-04
+# Version 1.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Removes the folder and everything in it
@@ -21,9 +23,10 @@ function Remove-folder {
 
     try {
         Remove-Item -Path $FolderPath -Recurse -ErrorAction Stop
-        Write-Verbose "Cleaned up folder: $FolderPath"
+        Write-Host "Cleaned up folder: $FolderPath"
     } catch {
-        Write-Verbose "Error cleaning up folder: $_"
+        Write-Host "Error cleaning up folder: $_"
         Exit 1
     }
+
 }

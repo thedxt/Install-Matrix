@@ -4,8 +4,10 @@
 #
 # Contributors: @kaysouthall, @theDXT
 # Created: 2024-Oct-07
-# Last Modified: 2025-Dec-19
-# Version 2.0.1
+# Last Modified: 2026-Jan-04
+# Version 2.0.2
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Downloads the installer from the specified URL and saves it to the specified output path.
@@ -26,15 +28,16 @@ function Get-Installer {
     
     if (-Not (Test-Path -Path $TempDir)) {
         New-Item -ItemType Directory -Path $TempDir | Out-Null
-        Write-Verbose "Created temporary directory: $TempDir"
+        Write-Host "Created temporary directory: $TempDir"
     }
 
     try {
         Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutputPath -ErrorAction Stop -UseBasicParsing
-        Write-Verbose "Downloaded installer to: $OutputPath"
+        Write-Host "Downloaded installer to: $OutputPath"
     } catch {
-        Write-Verbose "Error downloading installer: $_"
+        Write-Host "Error downloading installer: $_"
         Exit 1
     }
 
 }
+
