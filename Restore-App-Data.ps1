@@ -3,9 +3,11 @@
 # Function: Restore-App-Data
 #
 # Contributors: @theDXT
-# Created: 2024-11-05
-# Last Modified: 2024-11-05
-# Version 1.0.0
+# Created: 2024-Nov-05
+# Last Modified: 2026-Jan-04
+# Version 1.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   looks for the defined app data backup from the Backup-App-Data function for each user account in C:\users 
@@ -37,26 +39,26 @@ if (Test-Path "$($user.FullName)$($location)_$time")
 
 # if found restore the backup
 {
-Write-Verbose "Found $($user.FullName)$($location)_$time"
-Write-Verbose "restoring $($user.FullName)$($location)_$time to Original Location"
+Write-Host "Found $($user.FullName)$($location)_$time"
+Write-Host "restoring $($user.FullName)$($location)_$time to Original Location"
 
 
 if (-Not (Test-Path "$($user.FullName)$($location)")) {
         # create folder if backup exists but folder does not
-        Write-Verbose "The $($user.FullName)$($location) was not found"
-        Write-Verbose "creating $($user.FullName)$($location)"
+        Write-Host "The $($user.FullName)$($location) was not found"
+        Write-Host "creating $($user.FullName)$($location)"
         New-Item -ItemType Directory -Path "$($user.FullName)$($location)" | out-null
-        Write-Verbose "$($user.FullName)$($location) has been created"
+        Write-Host "$($user.FullName)$($location) has been created"
         #copy the backup into the folder
-        Write-Verbose "Restoring $($user.FullName)$($location)_$time to $($user.FullName)$($location)"
+        Write-Host "Restoring $($user.FullName)$($location)_$time to $($user.FullName)$($location)"
         Copy-Item -path "$($user.FullName)$($location)_$time\*" "$($user.FullName)$($location)" -Force -Recurse
-        Write-Verbose "Restore Completed"
+        Write-Host "Restore Completed"
     }else{
     # if folder already exists copy the files back
-    Write-Verbose "The $($user.FullName)$($location) was found"
-    Write-Verbose "Restoring $($user.FullName)$($location)_$time to $($user.FullName)$($location)"
+    Write-Host "The $($user.FullName)$($location) was found"
+    Write-Host "Restoring $($user.FullName)$($location)_$time to $($user.FullName)$($location)"
     Copy-Item -path "$($user.FullName)$($location)_$time\*" "$($user.FullName)$($location)" -Force -Recurse
-    Write-Verbose "Restore Completed"
+    Write-Host "Restore Completed"
     }
 
 
@@ -65,10 +67,11 @@ if (-Not (Test-Path "$($user.FullName)$($location)")) {
 else
 #if no backup found do nothing
 {
-Write-Verbose "Did not Find $($user.FullName)$($location)_$time"
-Write-Verbose "skipping $user"
+Write-Host "Did not Find $($user.FullName)$($location)_$time"
+Write-Host "skipping $user"
 }
 
 }
+
 
 }
