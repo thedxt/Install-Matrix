@@ -2,11 +2,13 @@
 #
 # Contributors: @theDXT
 # Created: 2023-Apr-16
-# Last Modified: 2026-Jan-03
-# Version 2.1.0
+# Last Modified: 2026-Jan-04
+# Version 2.1.1
 #
 # Looks for a currently installed program.
-
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
+#
 # Usage:
 #   .\Prog-Finder.ps1 -ProgramName "Duo Authentication"
 
