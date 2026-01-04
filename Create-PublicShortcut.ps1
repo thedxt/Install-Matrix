@@ -3,9 +3,11 @@
 # Function: Create-PublicShortcut
 #
 # Contributors: @kaysouthall, @theDXT
-# Created: 2024-10-07
-# Last Modified: 2024-10-07
-# Version 1.0
+# Created: 2024-Oct-07
+# Last Modified: 2026-Jan-04
+# Version 1.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Creates a shortcut to the installed application in the location
@@ -28,5 +30,6 @@ function Create-PublicShortcut {
     $Shortcut = $WshShell.CreateShortcut("$env:ProgramData\Microsoft\Windows\Start Menu\Programs\$ShortcutName.lnk")
     $Shortcut.TargetPath = $TargetPath
     $Shortcut.Save()
-    Write-Verbose "Created public shortcut: $ShortcutName"
+    Write-Host "Created public shortcut: $ShortcutName"
+
 }
