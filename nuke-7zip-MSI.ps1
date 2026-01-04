@@ -4,7 +4,7 @@
 #
 # Contributors: @theDXT
 # Created: 2024-Mar-22
-# Last Modified: 2024-03-22
+# Last Modified: 2026-Jan-04
 # Version 2.0.1
 #
 # Script URI: https://github.com/thedxt/Install-Matrix
@@ -39,3 +39,4 @@ write-host "7Zip MSI Client Nuke is completed"
 
 
 }
+
