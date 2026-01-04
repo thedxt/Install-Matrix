@@ -3,9 +3,12 @@
 # Function: nuke-7zip-MSI
 #
 # Contributors: @theDXT
-# Created: 2024-03-22
+# Created: 2024-Mar-22
 # Last Modified: 2024-03-22
-# Version 2.0.0
+# Version 2.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
+#
 # Description:
 #   perform a silent uninstall of 7Zip MSI.
 
@@ -33,5 +36,6 @@ ForEach ($7Zip_msi_version in $7ZipMSIFinder) {
 }
 write-host "7Zip MSI Client Nuke is completed"
 }
+
 
 }
