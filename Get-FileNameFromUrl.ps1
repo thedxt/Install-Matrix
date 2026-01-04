@@ -3,9 +3,11 @@
 # Function: Get-FileNameFromUrl
 #
 # Contributors: @theDXT
-# Created: 2024-10-10
-# Last Modified: 2024-10-10
-# Version 1.0.0
+# Created: 2024-Oct-10
+# Last Modified: 2026-Jan-04
+# Version 1.0.1
+#
+# Script URI: https://github.com/thedxt/Install-Matrix
 #
 # Description:
 #   Get the file name from the get-finalurl function
@@ -19,3 +21,4 @@ function Get-FileNameFromUrl {
     $uri = New-Object System.Uri($finalUrl)
     return [System.IO.Path]::GetFileName($uri.LocalPath)
 }
+
