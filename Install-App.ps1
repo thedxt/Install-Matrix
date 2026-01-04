@@ -22,7 +22,7 @@ function Install-App {
     )
     
     try {
-    Write-Verbose "Installation is starting"
+    Write-Host "Installation is starting"
        Start-Process $InstallerPath $InstallArgs -wait -WindowStyle Hidden
 
         Write-Host "Installation completed successfully"
@@ -31,4 +31,5 @@ function Install-App {
         Exit 1
     }
 }
+
 
