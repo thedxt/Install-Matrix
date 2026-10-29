@@ -4,8 +4,8 @@
 #
 # Contributors: @kaysouthall, @theDXT
 # Created: 2024-Oct-07
-# Last Modified: 2026-Jan-04
-# Version 2.0.2
+# Last Modified: 2026-Oct-29
+# Version 2.0.3
 #
 # Script URI: https://github.com/thedxt/Install-Matrix
 #
@@ -32,7 +32,7 @@ function Get-Installer {
     }
 
     try {
-        Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutputPath -ErrorAction Stop -UseBasicParsing
+        Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutputPath -ErrorAction Stop -UseBasicParsing -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
         Write-Host "Downloaded installer to: $OutputPath"
     } catch {
         Write-Host "Error downloading installer: $_"
